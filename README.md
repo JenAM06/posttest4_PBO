@@ -10,7 +10,8 @@ Program ini dirancang untuk mengelola dan memfasilitasi pencarian data kuliner d
 <img width="660" height="270" alt="image" src="https://github.com/user-attachments/assets/b2600fc9-095a-4d54-bd65-3d08c3e551a5" />
 
 1. Package model
-   representasi data yang akan kita input sebagai data kuliner. Package terdiri dari:
+
+   Representasi data yang akan kita input sebagai data kuliner. Package terdiri dari:
    * KulinerItem.java
      Mendefinisikan kerangka abstrak untuk semua item kuliner. Menyimpan properti dasar (id, nama, rating) dan merupakan induk dari semua objek data.
    * TempatKuliner.java
@@ -19,6 +20,7 @@ Program ini dirancang untuk mengelola dan memfasilitasi pencarian data kuliner d
      Representasi dari makanan/minuman yang dijual. Saya melakukan extends dari KulinerItem dan menyimpan properti jenis dan harga.
 
 2. Package service
+   
    Package service untuk mengelola, memanipulasi, dan memvalidasi data objek yang ada di package model. Package terdiri dari:
    * IManajemenKuliner.java
      Mendefinisikan metode (method) apa saja yang harus ada untuk semua operasi manajemen kuliner (CRUD, pencarian, dan rekomendasi).
@@ -26,6 +28,7 @@ Program ini dirancang untuk mengelola dan memfasilitasi pencarian data kuliner d
      Menyimpan data (daftarTempat) dan berisi semua logic bisnis yaitu, penambahan data, pencarian (searching), filtering, updating, dan deleting data.
 
 3. Package View
+   
    Package main berisi titik masuk (entry point) aplikasi dan berfungsi sebagai lapisan View/Controller sederhana. Tugas utamanya adalah berinteraksi dengan pengguna (input/output). Package terdiri dari:
    * KulinerApp.java
      Menampilkan menu, menerima input dari pengguna (menggunakan Scanner), menangani kesalahan input, dan memanggil method-method di KulinerService untuk menjalankan perintah.
@@ -37,7 +40,7 @@ Tujuan: Mendefinisikan properti umum yang harus dimiliki oleh semua entitas kuli
 
 <img width="738" height="282" alt="image" src="https://github.com/user-attachments/assets/a9135fba-3b5a-4ac9-aa9c-4a3e5a68465f" />
 
-Kelas ini dideklarasikan sebagai public abstract class KulinerItem. Kelas kuliner menyimpan properti dasar seperti id, nama, rating yang diwariskan oleh kelas turunannya. Kelas konkret TempatKuliner dan MenuKuliner wajib meng-extend KulinerItem, sehingga mereka bisa mengimplementasikan propertinya.
+Kelas ini dideklarasikan sebagai public abstract class KulinerItem. Kelas kuliner menyimpan properti dasar seperti id, nama, rating yang diwariskan oleh kelas turunannya. Kelas TempatKuliner dan MenuKuliner wajib meng-extend KulinerItem, sehingga mereka bisa mengimplementasikan propertinya.
 
 ## B. Interface: IManajemenKuliner.java
 Tujuan: Mendefinisikan kumpulan method publik untuk service
@@ -51,7 +54,7 @@ Mendeklarasikan semua fungsi utama seperti createTempat, findTempat, updateTempa
 ## A. Overriding (Run-time Polymorphism)
 Konsep: Mendefinisikan ulang method yang sudah ada di superclass (kelas induk) pada subclass (kelas anak).
 
-Method toString() yang berasal dari superclass Object (di-override di KulinerItem)
+Menggunakan method toString() yang berasal dari superclass Object (di-override di KulinerItem)
 
 <img width="810" height="149" alt="image" src="https://github.com/user-attachments/assets/0483fff3-923e-4c6f-bca9-d7df36672812" />
 
